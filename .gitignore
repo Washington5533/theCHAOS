@@ -1,0 +1,49 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# Build outputs (file patterns catch artifacts inside x64/Debug;
+# don't ignore x64/ or Debug/ broadly — vendored libs live there)
+*.exe
+*.ilk
+*.obj
+*.pdb
+*.pgc
+*.pgd
+*.tlog
+*.tlog/**
+*.lastbuildstate
+*.recipe
+*.log
+*.idb
+*.ipch
+*.aps
+*.ncb
+*.opendb
+*.opensdf
+*.sdf
+*.cachefile
+*.VC.db
+*.VC.opendb
+*.FileListAbsolute.txt
+
+# Visual Studio copilot / AI indices
+CopilotIndices/
+copilot-chat/
+FileContentIndex/
+
+# Archives (extracted libraries, keep zips if needed)
+*.zip
+
+# Release output
+release/
+scripts/release/
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
