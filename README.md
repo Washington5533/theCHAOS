@@ -9,11 +9,15 @@
 ## 项目结构
 
 ```
-Games/
-├── Game/                       # SDL2 版本 (推荐体验)
+theCHAOS/
+├── README.md
+├── CHECKPOINTS.md               # 完整 Checkpoint 总览 + 技术难点
+├── .gitignore
+│
+├── Game/                        # SDL2 版本 (推荐体验 ✨)
 │   ├── Game/
-│   │   ├── main.cpp            # 程序入口
-│   │   ├── Game.h / Game.cpp   # 主循环、输入、渲染、碰撞 (375行)
+│   │   ├── main.cpp             # 程序入口
+│   │   ├── Game.h / Game.cpp    # 主循环、输入、渲染、碰撞 (375行)
 │   │   ├── Pendulum.h / Pendulum.cpp  # 双摆物理 + 3D球体渲染 (741行)
 │   │   ├── Physics.h / Physics.cpp    # 拉格朗日方程 + 积分器 (124行)
 │   │   ├── Player.h / Player.cpp      # 角色状态机 + 钩锁 + 步行面 (1314行)
@@ -22,21 +26,23 @@ Games/
 │   │   └── 01.cpp               # 早期测试代码
 │   ├── SDL2-2.32.4/             # SDL2 库 (已包含)
 │   ├── SDL2_ttf-2.22.0/         # SDL2_ttf 库 (已包含)
-│   ├── checkpoints/             # 分阶段开发文档 (cp1-cp8)
+│   ├── checkpoints/             # 分阶段详细开发文档 (cp1-cp8)
 │   ├── game-design.md           # 完整游戏设计文档
 │   ├── dev-playbook.md          # 开发调试手册
-│   └── Game.slnx               # Visual Studio 解决方案
+│   └── Game.slnx                # Visual Studio 解决方案
 │
 ├── Game-easyx/                  # EasyX 版本
 │   ├── Game/                    # 源码 (与SDL2版本核心逻辑一致)
 │   ├── easyX/                   # EasyX 库 (已包含)
 │   ├── assets/                  # 素材 (背景、角色贴图)
-│   └── tools/                   # 辅助脚本
+│   ├── tools/                   # 辅助脚本
+│   └── Game-easyx.slnx          # Visual Studio 解决方案
 │
-└── .gitignore
+└── scripts/
+    └── build_release.bat        # 一键 Release 构建+打包
 ```
 
-**总代码量**: SDL2版 3,482行 | EasyX版 2,749行
+**总代码量**: SDL2版 ~3,920行 | EasyX版 ~2,749行
 
 ---
 
@@ -179,22 +185,7 @@ Games/
 
 ## 开发历程
 
-项目分 10 个 Checkpoint 迭代开发，每个阶段均可编译运行：
-
-| CP | 里程碑 |
-|----|--------|
-| CP1 | 双摆物理模拟 + 绘制 |
-| CP2 | 角色步行面行走（四段系统） |
-| CP3 | 跳跃、飞行与杆面下滑 |
-| CP4 | 落回步行面 snap 检测 |
-| CP5 | 钩锁系统 + 球面脱落 |
-| CP6 | 钩锁充能 + HUD 重建 |
-| CP7 | 尖刺/死亡/得分平台 |
-| CP8 | 球体 3D 渲染 + 全套视觉特效 |
-| CP9 | 开场/暂停/胜利结算 |
-| CP10 | 视觉和图形重建 |
-
-详细记录见 `Game/checkpoints/` 目录。
+项目分 10 个 Checkpoint 迭代开发，CP1-CP3 手动完成，CP4-CP10 AI 辅助。每个阶段均可编译运行。完整记录见 **[CHECKPOINTS.md](CHECKPOINTS.md)**
 
 ---
 
